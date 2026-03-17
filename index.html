@@ -3,20 +3,387 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мой сайт</title>
+  <title>Дарина | Аналитика & Дашборды</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background-color: #f9f9f9;
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --dark: #1e293b;
+      --gray: #647486;
+      --light: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --shadow: rgba(0, 0, 0, 0.05);
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.;
+      color: var(--dark);
+      background-color: var(--light);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 2px 10px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+ }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
     h1 {
-      color: #2c3e50;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      color: var(--dark);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    p {
+      color: var(--gray);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 0;
+      background: linear-gradient(15deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+
+    .hero h1 {
+      color: var(--dark);
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 1.5rem auto;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--primary-light);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+    }
+
+    .project-img {
+      height: 200px;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-content h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .tag {
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-item {
+      flex: 1 1 200px;
+      background: var(--light);
+      padding: 1.2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 0;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.4rem;
+      transition: opacity 0.3s;
+    }
+
+    .social-links a:hover {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .hero {
+        padding: 4rem 0;
+      }
+      section {
+        padding: 3rem 0;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Добро пожаловать на мой GitHub Pages!</h1>
-  <p>Здесь представлено порфолио моих дашбордов.</p>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Аналитик<span style="color:var(--primary)">.</span></a>
+        <div class="nav-links">
+          <a href="#about">О себе</a>
+          <a href="#projects">Проекты</a>
+          <a href="#skills">Навыки</a>
+          <a href="#contact">Контакты</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Привет, я — <span style="color: var(--primary);">Дарина</span></h1>
+      <p>Аналитик данных и создатель интерактивных дашбордов. Превращаю сырые данные в стратегические решения.</p>
+      <a href="#projects" class="btn">Посмотреть проекты</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>О себе</h2>
+      <p>Я — аналитик данных с более чем 5-летним опытом работы с данными в научной, логистической и коммерческой сферах. Моя специализация — построение ETL-пайплайнов, визуализация метрик и создание self-service дашбордов для бизнеса.</p>
+      <p>Люблю работать с Python (Pandas, Plotly, Streamlit), SQL, Power BI и Tableau. Всегда стремлюсь к тому, чтобы визуализация не просто «выглядела красиво», а помогала принимать решения.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Проекты & Дашборды</h2>
+      <div class="projects-grid">
+        <!-- Пример проекта 1 -->
+        <div class="project-card">
+          <div class="project-img">
+            📊 Дашборд 1 (Power BI)
+          </div>
+          <div class="project-content">
+            <h3>Название дашборда 1</h3>
+            <p>описание дашборда</p>
+            <div class="project-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">DAX</span>
+              <span class="tag">SQL</span>
+            </div>
+            <a href="#" class="btn">Посмотреть</a>
+          </div>
+        </div>
+
+        <!-- Пример проекта 2 -->
+        <div class="project-card">
+          <div class="project-img">
+            📈 Дашборд 2 (Power BI)
+          </div>
+          <div class="project-content">
+            <h3>Название дашборда 2</h3>
+            <p>описание дашборда</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Plotly</span>
+            </div>
+            <a href="#" class="btn">Посмотреть</a>
+          </div>
+        </div>
+
+        <!-- Пример проекта 3 -->
+        <div class="project-card">
+          <div class="project-img">
+            📉 Дашборд 3 (Tableau)
+          </div>
+          <div class="project-content">
+            <h3>Название дашборда 3</h3>
+            <p>описание дашборда</p>
+            <div class="project-tags">
+              <span class="tag">Tableau</span>
+              <span class="tag">Alerts</span>
+            </div>
+            <a href="#" class="btn">Посмотреть</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Навыки</h2>
+      <div class="skills">
+        <div class="skill-item">
+          <h3>Анализ</h3>
+          <p>SQL (MS SQL Server, PostgreSQL, ClickHouse), MDX (OLAP-кубы), Python (Pandas, NumPy, Seaborn, Matplotlib, Scikit-learn), статистика, прогнозная аналитика</p>
+        </div>
+        <div class="skill-item">
+          <h3>Визуализация</h3>
+          <p>Power BI, Tableau, Plotly, Matplotlib, Seaborn, Redash</p>
+        </div>
+        <div class="skill-item">
+          <h3>Инфраструктура</h3>
+          <p>Jupiter Notebook, Airflow, Git</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Связаться со мной</h2>
+      <p>Готова обсудить новый проект, сотрудничество или просто ответить на вопросы.</p>
+      <div class="footer-content">
+        <p>📧 darina-geo@yandex.ru</p>
+        <p>🔗 linkedin.com/in/дарина-газизова-0293318b/</p>
+        <p>💻 github.com/darina6688</p>
+        <div class="social-links">
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">Kaggle</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2026 Дарина Газизова. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
