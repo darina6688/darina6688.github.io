@@ -94,20 +94,16 @@
       position: relative;
     }
 
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -0.5rem;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
 
     p {
       color: var(--gray);
       margin-bottom: 1.2rem;
+    }
+
+   #about p {
+      margin-bottom: 1rem;          /* чуть меньше, чем 1.2rem */
+      line-height: 1.5;            /* комфортный межстрочный интервал */
+      font-size: 1rem;             /* при необходимости — можно слегка увеличить */
     }
 
     .hero {
@@ -272,16 +268,19 @@
   <section class="hero">
     <div class="container">
       <h1>Добро пожаловать!</h1>
+      <p> </p>
       <h2>Меня зовут <span style="color: var(--primary);">Дарина</span>, я - аналитик данных.</h2>
-      <p>Создаю интерактивные дашборды, в которых цифры рассказывают истории.</p>
+      <p>Создаю дашборды, в которых цифры рассказывают истории.</p>
       <p>Помогаю бизнесу принимать стратегические решения.</p>
+      <p> </p>
       <a href="#projects" class="btn">Посмотреть проекты</a>
     </div>
   </section>
 
   <section id="about">
     <div class="container">
-      <h2>О себе</h2>
+      <h2>О себе:</h2>
+      <p> </p>
       <p>Аналитик данных с более чем 5-летним опытом в научных, логистических и коммерческих проектах. Мои решения помогают бизнесу видеть данные, понимать их и принимать обоснованные решения.</p>
       <p>Специализируюсь на проектировании и автоматизации ETL-процессов, разработке ключевых метрик и создании интерактивных дашбордов, ориентированных на конкретные бизнес-цели.</p>
       <p>Провожу анализ данных с помощью Python (Pandas, Seaborn, Numpy, Matplotlib, SciPy, Plotly), SQL, Power BI и Tableau, подбирая инструмент под задачу.</p>
@@ -292,6 +291,7 @@
   <section id="projects">
     <div class="container">
       <h2>Проекты & Дашборды</h2>
+      <p> </p>
       <div class="projects-grid">
         <!-- Пример проекта 1 -->
         <div class="project-card">
@@ -300,7 +300,7 @@
           </div>
           <div class="project-content">
             <h3>Интеграция 1С Битрикс и конверсия в заявки</h3>
-            <p>отчет показывает количество расчетов в системе 1С Битрикс и переход (конверсию) в заявки</p>
+            <p>Отчет показывает количество расчетов в системе 1С Битрикс и переход (конверсию) в заявки</p>
             <div class="project-tags">
               <span class="tag">Power BI</span>
               <span class="tag">DAX</span>
@@ -316,8 +316,8 @@
             <img src="images/funnel.JPG" alt="Дашборд по воронкам продаж и сравнение YoY в Power BI">
           </div>
           <div class="project-content">
-            <h3>Воронки продаж по объектам</h3>
-            <p>отчет показывает распределение по воронкам продаж объектов и их конверсию в сделки, а также сравнение текущего периода с предыдущим. </p>
+            <h3>Воронки продаж по объектам и сравнение YoY</h3>
+            <p>Отчет показывает распределение по воронкам продаж объектов и их конверсию в сделки, а также сравнение текущего периода с предыдущим. </p>
             <div class="project-tags">
               <span class="tag">Power BI</span>
               <span class="tag">MS SQL Server</span>
@@ -330,11 +330,11 @@
         <!-- Пример проекта 3 -->
         <div class="project-card">
           <div class="project-img">
-            <img src="images/sales.JPG" alt="Дашборд по продажам, воронке продаж в Power BI">
+            <img src="images/sales.JPG" alt="Дашборд по продажам в Power BI">
           </div>
           <div class="project-content">
             <h3>Интерактивный дашборд по продажам</h3>
-            <p>отчет показывает исторические данные по объему продаж, динамику в разрезе разных стадий, воронку продаж, а также выявляет основные причины закрытия продажи.</p>
+            <p>Отчет показывает исторические данные по объемам продаж, динамику в разрезе разных стадий, воронку продаж, а также основные причины закрытия продаж.</p>
             <div class="project-tags">
               <span class="tag">Power BI</span>
               <span class="tag">MS SQL Server</span>
@@ -347,11 +347,11 @@
         <!-- Пример проекта 4 -->
         <div class="project-card">
           <div class="project-img">
-            <img src="images/shipments.jpg" alt="Дашборд по воронкам продаж и сравнение YoY в Power BI">
+            <img src="images/shipments.jpg" alt="Дашборд по оптимизации бизнес процесса отгрузок">
           </div>
           <div class="project-content">
             <h3>Бизнес-процесс отгрузок</h3>
-            <p>Отчет показывает время отгрузки и дни просрочки по разным периодам, также отображены средние и средневзвешенные показатели по суммам партий.</p>
+            <p>Отчет показывает время отгрузки и дни просрочки по разным периодам, отображены средние и средневзвешенные показатели по суммам партий.</p>
             <div class="project-tags">
               <span class="tag">Power BI</span>
               <span class="tag">MS SQL Server</span>
@@ -368,7 +368,7 @@
           </div>
           <div class="project-content">
             <h3>Avocado Sales in USA</h3>
-            <p>дашборд построен в Redash (в рамках учебного проекта Karpov.courses), данные к каждому графику получены с помощью SQL-запросов к базе.</p>
+            <p>Дашборд построен в Redash (в рамках учебного проекта Karpov.courses), данные к каждому графику получены с помощью SQL-запросов к базе.</p>
             <div class="project-tags">
               <span class="tag">Redash</span>
               <span class="tag">PostgreSQL</span>
@@ -383,6 +383,7 @@
   <section id="skills">
     <div class="container">
       <h2>Навыки</h2>
+      <p> </p>
       <div class="skills">
         <div class="skill-item">
           <h3>Анализ</h3>
@@ -408,6 +409,7 @@
   <section id="contact">
     <div class="container">
       <h2>Связаться со мной</h2>
+      <p> </p>
       <p>Готова обсудить новый проект, сотрудничество или просто ответить на вопросы.</p>
       <div class="footer-content">
         <p>📧 E-mail: darina-geo@yandex.ru</p>
