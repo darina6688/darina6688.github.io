@@ -133,6 +133,10 @@
       transition: background 0.3s;
     }
 
+    .btn + .btn {
+        margin-left: 24px;
+    }
+
     .btn:hover {
       background: var(--primary-light);
     }
@@ -205,6 +209,42 @@
       border-radius: 8px;
       text-align: center;
     }
+
+    .skills-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  }
+
+  .skill-category {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem}
+
+.skill-category > strong {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-item {
+  white-space: nowrap;
+  padding-left: 0.6rem;
+  position: relative;
+}
+
+.skill-item::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
 
     footer {
       background: var(--dark);
@@ -300,7 +340,7 @@
             <img src="images/shipments.JPG" alt="Дашборд по оптимизации бизнес процесса отгрузок">
           </div>
           <div class="project-content">
-            <h3>Бизнес-процесс отгрузок</h3>
+            <h3>Оптимизация бизнес-процесса отгрузок</h3>
             <p>Отчет показывает время отгрузки и дни просрочки по разным периодам, отображены средние и средневзвешенные показатели по суммам партий.</p>
             <div class="project-tags">
               <span class="tag">Power BI</span>
@@ -339,9 +379,9 @@
             <div class="project-tags">
               <span class="tag">Power BI</span>
               <span class="tag">MS SQL Server</span>
-              <span class="tag">DAX</span>
+              <span class="tag">Python</span>
             </div>
-            <a href="images/fun_dinam.jpg" target="_blank" class="btn">Посмотреть</a> 
+            <a href="images/fun_dinam.jpg" target="_blank" class="btn">Дашборд</a> 
             <a href="https://github.com/darina6688/darina6688.github.io/blob/main/images/funnel_adhoc.ipynb" target="_blank" class="btn">Код Python</a>
           </div>
         </div>
@@ -386,7 +426,7 @@
             <img src="images/prev_avoc.JPG" alt="Интерактивный дашборд по продажам авокадо в Redash">
           </div>
           <div class="project-content">
-            <h3>Продажи авокадо</h3>
+            <h3>Продажи авокадо (дашборд Redash)</h3>
             <p>Дашборд построен в Redash (Karpov.courses), данные к каждому графику получены с помощью SQL-запросов к базе.</p>
             <p> </p>
             <div class="project-tags">
@@ -401,29 +441,37 @@
   </section>
 
   <section id="skills">
-    <div class="container">
-      <h2>Навыки</h2>
-      <p> </p>
-      <div class="skills">
-        <div class="skill-item">
-          <h3>Анализ</h3>
-          <p>SQL (MS SQL Server, PostgreSQL)</p>
-          <p>MDX (OLAP-кубы), DAX, M (Power Query)</p>
-          <p>Python (Pandas, NumPy, SciPy, Statsmodels)</p>
-          <p>Cтатистика, прогнозная аналитика</p>
-        </div>
-        <div class="skill-item">
-          <h3>Визуализация</h3>
-          <p>Power BI, Tableau, Redash</p>
-          <p>Python (Plotly, Matplotlib, Seaborn)</p>
-        </div>
-        <div class="skill-item">
-          <h3>Инфраструктура</h3>
-          <p>Jupyter Notebook </p>
-          <p>Airflow, Git</p>
-        </div>
+  <div class="container">
+    <h2>Навыки</h2>
+    <p></p>
+    <div class="skills-inline">
+      <div class="skill-category">
+        <strong>Анализ:</strong>
+        <span class="skill-list">
+          <span class="skill-item">SQL (MS SQL Server, PostgreSQL)</span>
+          <span class="skill-item">MDX (OLAP-кубы), DAX, M (Power Query)</span>
+          <span class="skill-item">Python (Pandas, NumPy, SciPy, Statsmodels)</span>
+          <span class="skill-item">Статистика, прогнозная аналитика</span>
+        </span>
+      </div>
+
+      <div class="skill-category">
+        <strong>Визуализация:</strong>
+        <span class="skill-list">
+          <span class="skill-item">Power BI, Tableau, Redash</span>
+          <span class="skill-item">Python (Plotly, Matplotlib, Seaborn)</span>
+        </span>
+      </div>
+
+      <div class="skill-category">
+        <strong>Инфраструктура:</strong>
+        <span class="skill-list">
+          <span class="skill-item">Jupyter Notebook</span>
+          <span class="skill-item">Airflow, Git</span>
+        </span>
       </div>
     </div>
+  </div>
   </section>
 
   <section id="contact">
