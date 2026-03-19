@@ -210,42 +210,6 @@
       text-align: center;
     }
 
-    .skills-inline {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  }
-
-  .skill-category {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem}
-
-.skill-category > strong {
-  flex-shrink: 0;
-  font-weight: 600;
-  color: var(--dark);
-}
-
-.skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.skill-item {
-  white-space: nowrap;
-  padding-left: 0.6rem;
-  position: relative;
-}
-
-.skill-item::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-}
-
     footer {
       background: var(--dark);
       color: white;
@@ -440,39 +404,97 @@
     </div>
   </section>
 
-  <section id="skills">
-  <div class="container">
-    <h2>Навыки</h2>
-    <p></p>
-    <div class="skills-inline">
-      <div class="skill-category">
-        <strong>Анализ:</strong>
-        <span class="skill-list">
-          <span class="skill-item">SQL (MS SQL Server, PostgreSQL)</span>
-          <span class="skill-item">MDX (OLAP-кубы), DAX, M (Power Query)</span>
-          <span class="skill-item">Python (Pandas, NumPy, SciPy, Statsmodels)</span>
-          <span class="skill-item">Статистика, прогнозная аналитика</span>
-        </span>
+  <section id="skills" style="padding: 5rem 0; background-color: var(--light);">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+    <h2 style="color: var(--dark); font-size: clamp(1.8rem, 4vw, 2.2rem); position: relative; margin-bottom: 2rem;">
+      Навыки
+      <span style="position: absolute; left: 0; bottom: -8px; width: 60px; height: 3px; background: var(--primary);"></span>
+    </h2>
+
+    <div class="skills" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem;">
+      <!-- Блок: Анализ -->
+      <div class="skill-item" style="
+        background: var(--card-bg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        flex: 1 1 280px;
+        min-width: 250px;
+      ">
+        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          📊 Анализ данных
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; color: var(--gray);">
+          <li style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> SQL (MS SQL Server, PostgreSQL)
+          </li>
+          <li style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> DAX, MDX, M (Power Query)
+          </li>
+          <li style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Python: Pandas, NumPy, SciPy, Statsmodels
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Статистика, прогнозная аналитика
+          </li>
+        </ul>
       </div>
 
-      <div class="skill-category">
-        <strong>Визуализация:</strong>
-        <span class="skill-list">
-          <span class="skill-item">Power BI, Tableau, Redash</span>
-          <span class="skill-item">Python (Plotly, Matplotlib, Seaborn)</span>
-        </span>
+      <!-- Блок: Визуализация -->
+      <div class="skill-item" style="
+        background: var(--card-bg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        flex: 1 1 280px;
+        min-width: 250px;
+      ">
+        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          📈 Визуализация
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; color: var(--gray);">
+          <li style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Power BI, Tableau, Redash
+          </li>
+          <li style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Python: Plotly, Matplotlib, Seaborn
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Создание интерактивных дашбордов и отчётов
+          </li>
+        </ul>
       </div>
 
-      <div class="skill-category">
-        <strong>Инфраструктура:</strong>
-        <span class="skill-list">
-          <span class="skill-item">Jupyter Notebook</span>
-          <span class="skill-item">Airflow, Git</span>
-        </span>
+      <!-- Блок: Инфраструктура & автоматизация -->
+      <div class="skill-item" style="
+        background: var(--card-bg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 4px 12px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        flex: 1 1 280px;
+        min-width: 250px;
+      ">
+        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          ⚙️ Инфраструктура & Автоматизация
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; color: var(--gray);">
+          <li style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Jupyter Notebook, Git
+          </li>
+          <li style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Airflow (ETL-процессы)
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--primary);">●</span> Автоматизация отчётов и ETL-пайплайнов
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-  </section>
+</section>
 
   <section id="contact">
     <div class="container">
